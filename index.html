@@ -38,7 +38,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:27, minZoom:12
-        }).fitBounds([[33.12879512691398,-97.2825315701736],[33.29367082275053,-97.00544122328813]]);
+        }).fitBounds([[33.148014883527935,-97.2730195134895],[33.31285439663887,-96.99592916660406]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -116,9 +116,6 @@
         map.addLayer(layer_OSMStandard_0);
         function pop_0d5e4e1f2ddf4a9c8872715f9a1970ccdentontx_1(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['qc_id'] !== null ? autolinker.link(String(feature.properties['qc_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -154,103 +151,20 @@
         function pop_Clipped_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['qc_id'] !== null ? autolinker.link(String(feature.properties['qc_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">aadt</th>\
+                        <td class="visible-with-data" id="aadt">' + (feature.properties['aadt'] !== null ? autolinker.link(String(feature.properties['aadt']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['dist_nbr'] !== null ? autolinker.link(String(feature.properties['dist_nbr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">road</th>\
+                        <td class="visible-with-data" id="road">' + (feature.properties['road'] !== null ? autolinker.link(String(feature.properties['road']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['dist_nm'] !== null ? autolinker.link(String(feature.properties['dist_nm']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">latitude</th>\
+                        <td class="visible-with-data" id="latitude">' + (feature.properties['latitude'] !== null ? autolinker.link(String(feature.properties['latitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['cnty_nbr'] !== null ? autolinker.link(String(feature.properties['cnty_nbr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cnty_nm'] !== null ? autolinker.link(String(feature.properties['cnty_nm']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['trfc_statn_id'] !== null ? autolinker.link(String(feature.properties['trfc_statn_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['category'] !== null ? autolinker.link(String(feature.properties['category']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['active'] !== null ? autolinker.link(String(feature.properties['active']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_year'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt'] !== null ? autolinker.link(String(feature.properties['aadt']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_01_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_01_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_02_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_02_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_03_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_03_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_04_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_04_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_05_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_05_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_06_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_06_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_07_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_07_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_08_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_08_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_09_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_09_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_10_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_10_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_11_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_11_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_12_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_12_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_13_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_13_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_14_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_14_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_15_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_15_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_16_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_16_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_17_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_17_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_18_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_18_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['aadt_rpt_hist_19_qty'] !== null ? autolinker.link(String(feature.properties['aadt_rpt_hist_19_qty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['road'] !== null ? autolinker.link(String(feature.properties['road']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['latitude'] !== null ? autolinker.link(String(feature.properties['latitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['longitude'] !== null ? autolinker.link(String(feature.properties['longitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['objectid_1'] !== null ? autolinker.link(String(feature.properties['objectid_1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">longitude</th>\
+                        <td class="visible-with-data" id="longitude">' + (feature.properties['longitude'] !== null ? autolinker.link(String(feature.properties['longitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
